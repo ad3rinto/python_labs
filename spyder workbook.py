@@ -53,24 +53,24 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 #direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+# text = input("Type your message:\n").lower()
+# shift = int(input("Type the shift number:\n"))
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
-def encrypt(t,s):
-  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-  #do nothing.
-  new_text = ""
-  for item in t:
-    if item in alphabet and direction == "encode":
-      item_index = alphabet.index(item)
-      new_text += alphabet[item_index + s]
-    elif item in alphabet and direction == "decode":
-      item_index = alphabet.index(item)
-      new_text += alphabet[item_index - s]
-  print(new_text)  
+# #TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+# def encrypt(t,s):
+#   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+#   #do nothing.
+#   new_text = ""
+#   for item in t:
+#     if item in alphabet and direction == "encode":
+#       item_index = alphabet.index(item)
+#       new_text += alphabet[item_index + s]
+#     elif item in alphabet and direction == "decode":
+#       item_index = alphabet.index(item)
+#       new_text += alphabet[item_index - s]
+#   print(new_text)  
 
-encrypt(t = text, s= shift)
+# encrypt(t = text, s= shift)
  
     #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
     #e.g. 
@@ -87,6 +87,7 @@ encrypt(t = text, s= shift)
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
 
 
+# Unto deep dive into python dictionaries
 
 
 

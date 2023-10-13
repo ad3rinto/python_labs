@@ -99,8 +99,8 @@ print(python_lab["bug"])
 
 python_lab["test"]= "Making sure the code works"
 
-for item in python_lab:
-    print(item, python_lab[item])
+for (key) in python_lab:
+    print(key)
 
 
 

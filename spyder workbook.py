@@ -154,27 +154,33 @@ operations = {
     "/": divide,
 }
 
-num1 = int(input("Whats the first number ? "))
-num2 = int(input("Whats the second number ? ")) 
-                
-for key in operations:
-    print(key)       
+
+def calculate(first_num, second_num, operative):
+    result = operations[operative](first_num, second_num)
+    print(f"{first_num} {operative} {second_num} = {result}")
+
+
+calculator = True
     
-operating_symbol = input("Select an operation from the options above")   
+while calculator:
+    num1 = int(input("Whats the first number ? "))
+    num2 = int(input("Whats the second number ? "))  
+    for key in operations:
+         print(key)
+    operating_sig = input("Select an operation from above: ")    
+    calculate(num1,num2, operating_sig)
+    continue_calc = input("Do you wish to continue? ").lower()
+    if continue_calc == "n":
+        calculator = False
+    else:
+        calculator = True
+
     
-def calculate(first_num, sexond_num, operative):
-    result = operations[operative](first_num, sexond_num)
-    print(f"{first_num} {operative} {sexond_num} = {result}")
+ 
     
     
-calculate(num1, num2, operating_symbol)   
-    
-    
-    
-    
-    
-    
-    
+          
+  
     
     
     

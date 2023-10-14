@@ -89,21 +89,50 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 
 # Unto deep dive into python dictionaries
 
-python_lab = {
-    "bug":"Errors in code",
-    "function":"make code do stuff",
-    "list":"Array of objects",
-}
+# python_lab = {
+#     "bug":"Errors in code",
+#     "function":"make code do stuff",
+#     "list":"Array of objects",
+# }
 
-print(python_lab["bug"])
+# print(python_lab["bug"])
 
-python_lab["test"]= "Making sure the code works"
+# python_lab["test"]= "Making sure the code works"
 
-for (key) in python_lab:
-    print(key)
+# for (key) in python_lab:
+#     print(key)
 
 
+# DAY10 challenge
 
+def is_leap(year):
+  if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+        return True
+      else:
+        return False
+    else:
+      return True
+  else:
+    return False
+  
+# TODO: Add more code here 👇
+def days_in_month(year_context, month_context):
+  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] 
+  if is_leap(year_context) == False:
+    return(month_days[month_context-1])
+  elif is_leap(year_context) == True:
+    if month_context == 2:
+      month_days[1] = 29
+      return (month_days[month_context-1])
+    else:
+      return (month_days[month_context-1])
+#🚨 Do NOT change any of the code below 
+year = int(input()) # Enter a year
+month = int(input()) # Enter a month
+days = days_in_month(year, month)
+print(days)
 
 
 

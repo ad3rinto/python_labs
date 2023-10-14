@@ -135,6 +135,7 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 # days = days_in_month(year, month)
 # print(days)
 
+'''
 def add(n1, n2):
     return n1 + n2
 
@@ -160,9 +161,9 @@ def calculate(first_num, second_num, operative):
     print(f"{first_num} {operative} {second_num} = {result}")
 
 
-calculator = True
+should_continue = True
     
-while calculator:
+while should_continue:
     num1 = int(input("Whats the first number ? "))
     num2 = int(input("Whats the second number ? "))  
     for key in operations:
@@ -171,12 +172,14 @@ while calculator:
     calculate(num1,num2, operating_sig)
     continue_calc = input("Do you wish to continue? ").lower()
     if continue_calc == "n":
-        calculator = False
+        should_continue = False
     else:
-        calculator = True
+        should_continue = True
 
-    
- 
+ '''
+#CAPSTONE PROJECT 15 OCT 2023
+
+
     
     
           

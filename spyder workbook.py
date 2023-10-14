@@ -180,17 +180,19 @@ while should_continue:
 #CAPSTONE PROJECT 15 OCT 2023
 import random
 
-player_cards = [random.randint(1,11),random.randint(1,11) ]
+cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+player_cards = [random.choice(cards),random.choice(cards) ]
 print(f"Your cards: {player_cards}")   
-computer_card1 = random.randint(1,11)    
+computer_card1 = random.choice(cards)    
 print(f"Computer's first card: {computer_card1}")      
 get_more_card = input("Do you want to draw another card? 'y' to get another 'n' to pass\n").lower()  
 
+player_total = 0
+computer_total = 0
 
 if get_more_card == "n":
-    computer_cards = [computer_card1, random.randint(1, 11)]
-    player_total = 0
-    computer_total = 0
+    computer_cards = [computer_card1, random.choice(cards)]
+
     for card in player_cards:
         player_total += card
     for card in computer_cards:
@@ -202,10 +204,23 @@ if get_more_card == "n":
         print("You win")
     else:
         print("Computer wins")
-        
-        
-        
-        
+elif get_more_card == "y":
+    computer_cards = [computer_card1, random.choice(cards)]
+    player_cards.append(random.choice(cards))
+    for card in player_cards:
+        player_total += card
+    
+        if computer_total < 17:
+            computer_cards.append(random.choice(cards))
+        for card in computer_cards:
+            computer_total += card
+    print(f"Your final hand :{player_cards}")
+    print(f"Computer's final hand :{computer_cards}")
+    # if player_total > computer_total:
+    #     print("You win")
+    # else:
+    #     print("Computer wins")
+    print(computer_total, player_total)    
         
         
     

@@ -102,13 +102,13 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 # for (key) in python_lab:
 #     print(key)
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 
-#Functions and Outputs
-def format_name(f_name, l_name):
-    return(f"{f_name} {l_name}").title()
+# #Functions and Outputs
+# def format_name(f_name, l_name):
+#     return(f"{f_name} {l_name}").title()
   
-=======
+# =======
 
 # DAY10 challenge
 
@@ -193,49 +193,88 @@ while should_continue:
 #CAPSTONE PROJECT 15 OCT 2023
 import random
 
-cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
-player_cards = [random.choice(cards),random.choice(cards) ]
-print(f"Your cards: {player_cards}")   
-computer_card1 = random.choice(cards)    
-print(f"Computer's first card: {computer_card1}")      
-get_more_card = input("Do you want to draw another card? 'y' to get another 'n' to pass\n").lower()  
+# cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+# player_cards = [random.choice(cards),random.choice(cards) ]
+# print(f"Your cards: {player_cards}")   
+# computer_card1 = random.choice(cards)    
+# print(f"Computer's first card: {computer_card1}")      
+# get_more_card = input("Do you want to draw another card? 'y' to get another 'n' to pass\n").lower()  
 
-player_total = 0
-computer_total = 0
+# player_total = 0
+# computer_total = 0
 
-if get_more_card == "n":
-    computer_cards = [computer_card1, random.choice(cards)]
+# if get_more_card == "n":
+#     computer_cards = [computer_card1, random.choice(cards)]
 
-    for card in player_cards:
-        player_total += card
-    for card in computer_cards:
-        computer_total += card
+#     for card in player_cards:
+#         player_total += card
+#     for card in computer_cards:
+#         computer_total += card
     
-    print(f"Your final hand :{player_cards}")
-    print(f"Computer's final hand :{computer_cards}")
-    if player_total > computer_total:
-        print("You win")
+#     print(f"Your final hand :{player_cards}")
+#     print(f"Computer's final hand :{computer_cards}")
+#     if player_total > computer_total:
+#         print("You win")
+#     else:
+#         print("Computer wins")
+# elif get_more_card == "y":
+#     computer_cards = [computer_card1, random.choice(cards)]
+#     player_cards.append(random.choice(cards))
+#     for card in player_cards:
+#         player_total += card
+    
+#         if computer_total < 17:
+#             computer_cards.append(random.choice(cards))
+#         for card in computer_cards:
+#             computer_total += card
+#     print(f"Your final hand :{player_cards}")
+#     print(f"Computer's final hand :{computer_cards}")
+#     # if player_total > computer_total:
+#     #     print("You win")
+#     # else:
+#     #     print("Computer wins")
+#     print(computer_total, player_total)    
+        
+#GUESSING GAME ATTEMPT
+
+computer_number = random.randint(1, 101)
+attempts = 0
+
+def game_start():
+    global attempts
+    print("I am thinking of a number between 1 and 100, Try to guess the number")
+    game_difficulty = input("Select h for hard, and e for easy: \n").lower()           
+    if game_difficulty == "h":
+        attempts = 5 
+    elif game_difficulty == "e":
+        attempts = 10
     else:
-        print("Computer wins")
-elif get_more_card == "y":
-    computer_cards = [computer_card1, random.choice(cards)]
-    player_cards.append(random.choice(cards))
-    for card in player_cards:
-        player_total += card
+        print("You have selected a non valid option")
     
-        if computer_total < 17:
-            computer_cards.append(random.choice(cards))
-        for card in computer_cards:
-            computer_total += card
-    print(f"Your final hand :{player_cards}")
-    print(f"Computer's final hand :{computer_cards}")
-    # if player_total > computer_total:
-    #     print("You win")
-    # else:
-    #     print("Computer wins")
-    print(computer_total, player_total)    
-        
+    
+def game_play(attempts):
+    while attempts > 0:
+        player_option = int(input("Make a guess: "))
+        if player_option < computer_number :
+           print(f"Too low, try again, number of tries remaing {attempts -1}")
+           attempts -=1  
+        elif player_option == computer_number:
+            
+            attempts = 0
+            print("You got it right, you win")
+        else:
+            print(f"Too high, try again, number of tries remaing {attempts -1}")
+            attempts -=1
+    print("Game over")
         
     
+
+game_start()
+game_play(attempts)
     
+        
+ 
+
+    
+   
     

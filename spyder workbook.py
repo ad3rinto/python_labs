@@ -89,26 +89,28 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 
 # Unto deep dive into python dictionaries
 
-python_lab = {
-    "bug":"Errors in code",
-    "function":"make code do stuff",
-    "list":"Array of objects",
-}
+# python_lab = {
+#     "bug":"Errors in code",
+#     "function":"make code do stuff",
+#     "list":"Array of objects",
+# }
 
-print(python_lab["bug"])
+# print(python_lab["bug"])
 
-python_lab["test"]= "Making sure the code works"
+# python_lab["test"]= "Making sure the code works"
 
-for (key) in python_lab:
-    print(key)
-
-
+# for (key) in python_lab:
+#     print(key)
 
 
+#Functions and Outputs
+def format_name(f_name, l_name):
+    return(f"{f_name} {l_name}").title()
+  
 
+MINE = format_name("ADEnIYi", "ADwrwrO")
 
-
-
+print(MINE)
     
         
         

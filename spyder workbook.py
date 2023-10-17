@@ -253,7 +253,7 @@ def game_start():
     
     
 def game_play(attempts):
-    while attempts > 0:
+    while attempts > 1:
         player_option = int(input("Make a guess: "))
         if player_option < computer_number :
            print(f"Too low, try again, number of tries remaing {attempts -1}")
@@ -265,7 +265,14 @@ def game_play(attempts):
         else:
             print(f"Too high, try again, number of tries remaing {attempts -1}")
             attempts -=1
-    print("Game over")
+    if attempts == 1: 
+        print("You have one last try")
+        player_option = int(input("Make a guess: "))
+        if player_option == computer_number :
+            print("WINNER!!!!")
+        else:
+            print("YOu lose, Game over")
+     
         
     
 

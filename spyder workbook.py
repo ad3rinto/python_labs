@@ -237,9 +237,21 @@ import random
         
 #GUESSING GAME ATTEMPT
 
+
+numbers_art = """
+ ______              _                         ______                   
+|  ___ \            | |                       / _____)                  
+| |   | |_   _ ____ | | _   ____  ____ ___   | /  ___  ____ ____   ____ 
+| |   | | | | |    \| || \ / _  )/ ___)___)  | | (___)/ _  |    \ / _  )
+| |   | | |_| | | | | |_) | (/ /| |  |___ |  | \____/( ( | | | | ( (/ / 
+|_|   |_|\____|_|_|_|____/ \____)_|  (___/    \_____/ \_||_|_|_|_|\____)
+                                                                        
+
+"""
+
 computer_number = random.randint(1, 101)
 attempts = 0
-
+print(numbers_art)
 def game_start():
     global attempts
     print("I am thinking of a number between 1 and 100, Try to guess the number")
@@ -251,19 +263,18 @@ def game_start():
     else:
         print("You have selected a non valid option")
     
-    
 def game_play(attempts):
     while attempts > 1:
         player_option = int(input("Make a guess: "))
         if player_option < computer_number :
-           print(f"Too low, try again, number of tries remaing {attempts -1}")
+           print(f"Too low, try again, number of tries remaining {attempts -1}")
            attempts -=1  
         elif player_option == computer_number:
             
             attempts = 0
             print("You got it right, you win")
         else:
-            print(f"Too high, try again, number of tries remaing {attempts -1}")
+            print(f"Too high, try again, number of tries remaining {attempts -1}")
             attempts -=1
     if attempts == 1: 
         print("You have one last try")
@@ -271,7 +282,7 @@ def game_play(attempts):
         if player_option == computer_number :
             print("WINNER!!!!")
         else:
-            print("YOu lose, Game over")
+            print(f"YOu lose, Game over. The number was {computer_number}")
      
         
     

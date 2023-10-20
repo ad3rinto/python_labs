@@ -11,7 +11,7 @@ timmy = Turtle()
 print(timmy)
 timmy.shape("arrow")
 timmy.color("coral")
-
+timmy.forward(50)
 my_screen = Screen()
 print(my_screen.canvheight)
 print(my_screen.canvwidth)
